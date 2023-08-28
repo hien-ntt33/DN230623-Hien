@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn-login').click(function () {
+                let email = $('#login-email').val();
+                let pwd = $('#login-pswd').val();
+                console.log('email ', email, '  password ', pwd)
+            });
+            $('#btn-ra').keydown(function () {
+                let content = $('p').text();
+                console.log(content)
+            });
+            $('p').append(' Jquery');
+            let div1 = $('#div-1').html();
+            console.log(div1);
+            $('#btn-hide').click(function () {
+                $('h2').toggle();
+            });
+            $('#btn-show').click(function () {
+                $.ajax({
+                    url: 'https://reqres.in/api/users?page=2',
+                    type: 'GET'
+                }).done(function (msg) {
+                    console.log(msg)
+                })
+            });
+            $('#btn-post').click(function () {
+                $.ajax({
+                    url: 'https://reqres.in/api/users',
+                    type: 'POST',
+                    dataType: 'JSON',
+                    data: {
+                        "id": 14,
+                        "email": "hiennt@reqres.in",
+                        "first_name": "Hien",
+                        "last_name": "Nt",
+                        "avatar": "https://reqres.in/img/faces/7-image.jpg"
+                    }
+                }).done(function (msg) {
+                    console.log(msg)
+                })
+        });
+    })
+    </script>
+</head>
+
+<body>
+    <p>Lesson 20</p>
+    <input type="email" name="email" id="login-email" placeholder="Email" required="">
+    <input type="password" name="pswd" id="login-pswd" placeholder="Password" required="">
+    <button id="btn-login">Login</button>
+    <button id="btn-ra">Test</button>
+    <div id="div-1">
+        <h2>Jquery learning</h2>
+        <button id="btn-hide">Hide</button>
+        <button id="btn-show">Show</button>
+        <button id="btn-post">New</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 14 exercise</p>
+    <script>
+        var arr1 = [3, 5, 1, 8, -3, 7, 8];
+        var arr2 = [7, 12, 6, 9, 20, 56, 89];
+        var arr3 = [];
+        var arr4 = [0, 0, 0, 0, 0];
+        function findMin(a){
+            var min = a[0];
+            for (i=0;i<a.length;i++)
+            if (min > a[i]){
+                min = a[i]
+            }
+            console.log('Min value is:',min)
+        }
+        findMin(arr4);
+        function findNumber(b) {
+            var result = [];
+            for (e = 0; e < b.length; e++){
+            var targetNum = b[e];
+            if (targetNum > 9) {
+                result.push(targetNum)
+            }}
+            console.log('9 bigger values are:',result)
+        }
+        findNumber(arr2);
+    </script>
+</body>
+
+</html>

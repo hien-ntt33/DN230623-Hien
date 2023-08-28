@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><b>Exercise 1</b></p>
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input id="name"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input id="password" input type="password" required></td>
+        </tr>
+    </table>
+    <button onclick="myFunction()">Login</button>
+    <br><hr>
+    <p><b>Exercise 2</b></p>
+    <table>
+        <tr>
+            <td>Email</td>
+            <td><input id="email"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input id="password2" input type="password" required></td>
+        </tr>
+    </table>
+    <button onclick="validateInput()">Register</button>
+</body>
+<script>
+    function myFunction() {
+        var username = document.getElementById("name").value;
+        var pwd = document.getElementById("password").value;
+        if (pwd =="") 
+        {alert ("Enter password please")}
+        else {
+        var loginCheck = username == 'admin' && pwd == 12345678 ? window.location.href = "https://learn.rikkeiacademy.com/" : alert("Wrong username or password")
+    }}
+    function validateInput() {
+        var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var pwdFormat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        var regPwd = document.getElementById("password2").value;
+        if (regPwd =="") 
+        {alert ("Enter password please")}
+        else {
+        if (document.getElementById("email").value.match(mailFormat)) {
+            if (regPwd.match(pwdFormat)){
+            window.location.href = "https://learn.rikkeiacademy.com/"
+        }
+        else {alert ("Password must be at least 8 characters, including UPPPERCASE and lowercase and number") }}
+        else {alert("You have entered an invalid email address!")
+    }}}
+</script>
+</body>
+
+</html>

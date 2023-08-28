@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Lesson 11</p><br>
+    </body>
+    <script>
+        var numbers = [1,2,3,5,10,11];
+        var indexNumber = numbers[numbers.length - 1];
+        console.log(numbers[2])
+        console.log('indexNumber :', indexNumber)
+        for (var i=0; i<10; i++){
+            if (i===3){break;}
+            console.log('i :', i)
+        } 
+        var x = 1;
+        while (x<8){
+            x++
+            if (x<5){continue;}
+            console.log('x :',x)
+        }
+        var y = 0;
+        do {
+            y++
+            if (y<5){continue;}
+            console.log('y:',y)
+        }
+        while (y<8)
+        const cities = ['Ha Noi','Da Nang','Can Tho','Ho Chi Minh','Vung Tau','Quy Nhon','Vinh'];
+        for (let i=1; i < cities.length; i++){
+            console.log('index=',i)
+            console.log('phan tu trong mang=',cities[i])
+        }
+    </script>
+</html>

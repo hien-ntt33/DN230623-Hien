@@ -1,0 +1,94 @@
+<html lan="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 15</p>
+    <div id="header">Text A</div>
+    <div id="test" style="width: 100px;height: 100px;background-color: antiquewhite;"></div><br>
+    <button type="button" onclick="changeColor()">Change</button>
+    <button type="button" id='btn'>Change2</button>
+    <br>
+    <hr>
+    <div id="myList">
+        <div>Number 1</div>
+    </div><br>
+    <button type="button" onclick="addElement()">Add</button>
+    <button type="button" onclick="delElement()">Delete</button>
+    <button type="button" onclick="repElement()">Change</button>
+</body>
+<!-- <script>
+    const header = document.getElementById('header');
+    console.log('header: ',header.innerHTML)
+    header.addEventListener('mousedown', (e) => {
+        header.innerHTML = 'Text B';
+        console.log(header.innerHTML);
+    });
+    header.addEventListener('mouseup', (e) => {
+        console.log('mouseup');
+    });
+    header.addEventListener('click', (e) => {
+        console.log('click');
+    });
+    // header.addEventListener('mousemove', (e) =>{
+    //     console.log('mousemove');
+    // });
+    function onMouseOver (){
+        console.log('mouseover');
+    }
+</script> -->
+<!-- <script>
+    var inputKey = '';
+    document.addEventListener('keydown',function(event){
+        console.log(event);
+        inputKey += event.key
+        if (inputKey == 'hien'){
+            console.log('my name is',inputKey)
+        }
+    })
+</script> -->
+<script>
+    btn.addEventListener('click', changeColor);
+    function changeColor() {
+        test.style.backgroundColor = '#87CEFA'
+    }
+</script>
+<!-- <script>
+    var arr = [1, 5, 7, 8]
+    console.log('arr', arr);
+    for (var item of arr) {
+        console.log('item', item)
+    }
+</script> -->
+<script>
+    var arr = [1, 2, 4, 7, 11];
+    //Add
+    var i = 0;
+    function addElement() {
+        if (i < arr.length) {
+            var newDiv = document.createElement('div');
+            var divNum = document.createTextNode('Number ' + arr[i]);
+            newDiv.setAttribute('id', "key_" + i)
+            newDiv.appendChild(divNum);
+            document.getElementById('myList').appendChild(newDiv)
+            i++;
+        }
+    }
+    //Remove
+    function delElement() {
+        var removeElement = document.getElementById('key_2')
+        removeElement.remove();
+    }
+    //Replace
+    function repElement() {
+        var oldElement = document.getElementById('key_3');
+        var newNode = document.createTextNode('Number 100');
+        myList.replaceChild(newNode, oldElement)
+    }
+</script>
+
+</html>

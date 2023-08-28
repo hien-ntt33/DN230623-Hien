@@ -1,0 +1,95 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Lesson 17</p>
+        <script>
+            //Bài 1
+            // function Student(studentId,studentName,academy,age){
+            //     this.studentId = studentId,
+            //     this.studentName = studentName,
+            //     this.academy = academy,
+            //     this.age = age,
+            //     this.study = function(){
+            //         return 'Learn HTML, CSS, JS for frontend programming at ' + this.academy + ' class ' + this.age;  
+            //     }
+            // }
+            // var student = new Student('SV001','Nguyễn Văn A','Rikkei Academy',25);
+            // console.log(student.age)
+            //Bài 2
+            // var student = new Object();
+            // student.studentId = 'SV001';
+            // student.studentName = 'Nguyễn Văn A';
+            // student.academy = 'Rikkei Academy';
+            // student.number1 = 10;
+            // student.number2 = 20;
+            // student.study = function(){
+            //         return 'Learn HTML, CSS, JS for frontend programming at ' + this.academy
+            //     };
+            // student.calSum = function(){
+            //     var sum = this.number1 + this.number2;
+            //     return 'sum of number1 + number2 = ' + sum
+            // }
+            // console.log(student.calSum())
+            //Bài 3
+            // class Student{
+            //     constructor(studentId,studentName,academy){
+            //         this.studentId = studentId;
+            //         this.studentName = studentName;
+            //         this.academy = academy;
+            //     }
+            //     study(){
+            //         return 'Learn HTML, CSS, JS for frontend programming at ' + this.academy
+            //     }
+            // }
+            // var student1 = new Student('SV001', 'Nguyễn Văn A', 'Rikkei Academy');
+            // var student2 = new Student('SV002', 'Nguyễn Văn B', 'Rikkei Academy');
+            // var student3 = new Student('SV003', 'Nguyễn Văn C', 'Rikkei Academy');
+            // var student4 = new Student('SV004', 'Nguyễn Văn D', 'Rikkei Academy');
+            // var class1 = [student1,student2,student3,student4];
+            // console.log(class1)
+            // console.log(student1.study())
+            // console.log('studentId: ' + student1['studentId'] + ' academy: ' + student1['academy'])
+            function Student(studentId,studentName,academy){
+                return{
+                    studentId,studentName,academy,
+                    study: function(){
+                        return 'happy learning at ' + this.academy
+                    }
+                }
+            }
+            var student = new Student('SV001','Nguyễn Văn A','Rikkei Academy');
+            student.age = 20;
+            student.sex = true;
+            for (const key in student){
+                console.log(key)
+                console.log(student[key])
+            }
+            class Product{
+                constructor(productCode,productName,productBrand,productPrice,productColor,productDiscountRate){
+                    this.productCode = productCode;
+                    this.productName = productName;
+                    this.productBrand = productBrand;
+                    this.productPrice = productPrice;
+                    this.productColor = productColor;
+                    this.productDiscountRate = productDiscountRate;
+                }
+            }
+            class Category{
+                constructor(categoryCode,categoryName){
+                    this.categoryCode = categoryCode;
+                    this.categoryName = categoryName;
+            }
+        }
+        var listProduct =[];
+            for (i=0;i<101;i++){
+                var product2 = new Product('PD00'+i,'Notebook','Samsung',Math.floor(Math.random() * (30000000 - 9000000)) + 9000000,'Gray',Math.random() * 20)
+                listProduct.push(product2)
+            }
+            console.log(listProduct[1],listProduct[10])
+        </script>
+    </body>
+</html>

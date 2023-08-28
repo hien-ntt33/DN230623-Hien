@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 11</p><br>
+</body>
+<script>
+    // console.log('demo')
+    // var itemA = [1, 2, 7];
+    // var itemB = new Array(new Array(3, 1, 8), new Array('A', 'B', 'C'), new Array(6, 4, 2));
+    // var itemC = ['x', 'y', 'z'];
+    // var arr = new Array(itemA, itemB, itemC)
+    // console.log('arr', arr)
+    // console.log('index:',arr[1][1])
+    // console.log('index value itemB:',arr[1][0][2])
+    // // itemA.push(5)
+    // // console.log('push result',itemA)
+    // // var itemE = itemB.pop()
+    // // var itemF = itemB[0].pop()
+    // // console.log('pop result:',itemB)
+    // // var editItemB = itemB[1].fill('Nguyen Van A','A') 
+    // // console.log('edit result:',editItemB)
+    
+    // for (i=0;i < itemA.length;i++){
+    //     var itemG = itemA[i];
+    // if (itemG == 2){
+    //     console.log('index:',i)
+    //     console.log('value:',itemG)
+    //     break;
+    // }}
+    let myColor = ['Red','Green','White','Black'];
+    const points = [3,4,6,-9,10,-88,2];
+    //Bài 1
+    var myColor1 = ""
+    for (i=0; i<myColor.length; i++){       
+        if (i==(myColor.length-1)){
+            myColor1+=myColor[i]}
+        else {myColor1+= myColor[i]+', '}
+ }
+    console.log(myColor1)
+    var myColor2 = ""
+    for (i=0; i<myColor.length; i++){       
+        if (i==(myColor.length-1)){
+            myColor2+=myColor[i]}
+        else {myColor2+= myColor[i]+' + '}
+ }
+    console.log(myColor2)
+    //Bài 2
+    var reverseMyColor = "";   
+    for (i=(myColor.length-1);i>(-1);i--){
+        reverseMyColor+= myColor[i]+" "
+    }
+    console.log(reverseMyColor)
+    //Bài 3
+    points.push(5)
+    console.log(points)
+    //Bài 4
+    points[5]=99;
+    console.log(points)
+    //Bài 5 find the index of -9
+    for (i=0; i < points.length; i++){
+    if (points[i] === -9){
+        console.log('-9 index is:',i)
+        break
+    }}
+    //Bài 6 find max value
+    var pointsMax = points[0];
+    for (i=0; i < points.length; i++){
+        if (points[i] > pointsMax){
+            pointsMax = points[i];
+        }}
+        console.log('points max value is',pointsMax)
+    //Bài 7 find min value
+    var pointsMin = points[0];
+    for (i=0; i < points.length; i++){
+        if (points[i] < pointsMin){
+            pointsMin = points[i];
+        }}
+        console.log('points min value is',pointsMin)   
+    //Bài 9 delete element with index = 2
+    points.splice(2,1)
+    console.log('after deletion points value:',points)
+</script>
+
+</html>

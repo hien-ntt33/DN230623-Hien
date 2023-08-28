@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 14</p>
+    <script>
+        var points = [
+            [3, 4, 6, -9],
+            [10, -88, 2],
+            [2, 3, 5, 6, 11],
+            [2, 2]
+        ]
+        //Bài 1
+        var result = '';
+        for (var point of points) {
+            for (var item of point) {
+                result += item + ', '
+            }
+        }
+        console.log('result:', result)
+        //Bài 2
+        var result = [0, 1];
+        function findIndex(arr, val) {
+            for (i = 0; i < arr.length; i++) {
+                for (k = 0; k < arr[i].length; k++) {
+                    if (arr[i][k] == val) {
+                        result[0] = i;
+                        result[1] = k;
+                        return result
+                        console.log(result)
+                    }
+                }
+            }
+            return result
+        }
+        findIndex(points, 11);
+        console.log('index of 5:', result);
+        //Bài 3
+        var max = points[0][0];
+        function findMax(arr) {
+            for (i2 = 0; i2 < arr.length; i2++) {
+                for (k2 = 0; k2 < arr[i2].length; k2++) {
+                    if (arr[i2][k2] > max) {
+                        max = arr[i2][k2]
+                    }
+                }
+            }
+            return max
+        }
+        findMax(points);
+        console.log('max of points array:', max)
+        //Bài 4
+        var min = points[0][0];
+        function findMin(arr) {
+            for (i3 = 0; i3 < arr.length; i3++) {
+                for (k3 = 0; k3 < arr[i3].length; k3++) {
+                    if (arr[i3][k3] < min) {
+                        min = arr[i3][k3]
+                    }
+                }
+            }
+            return min
+        }
+        findMin(points);
+        console.log('min of points array:', min)
+        //Bài 5
+        var evenNum = [];
+        var sumNum = 0;
+        function sumEvenNum(arr) {
+            for (i4 = 0; i4 < arr.length; i4++) {
+                for (k4 = 0; k4 < arr[i4].length; k4++) {
+                    if (arr[i4][k4] % 2 === 0) {
+                        evenNum.push(arr[i4][k4])
+                    }
+                }
+            }
+            for (e = 0; e < evenNum.length; e++) {
+                sumNum += evenNum[e]
+            }
+        }
+        sumEvenNum(points);
+        console.log('sum of even numbers:', sumNum)
+        //Bài 7
+        points.splice(2,1)
+        console.log('delete index = 2:',points)
+        //Bài 8
+        points.push([0,1,12])
+        console.log('add element to array:',points)
+        //Bài 9
+        points[2]=[7,8]
+        console.log('alternate index=2:',points)
+        //Bài 10
+        var reverse = '';
+        for (i5=(points.length-1);i5>(-1);i5--) {
+            for (k5=(points[i5].length-1);k5>(-1);k5--) {
+                reverse += points[i5][k5] + ', '
+            }
+        }
+        console.log('reversed array:',reverse)
+    </script>
+</body>
+
+</html>

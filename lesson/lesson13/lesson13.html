@@ -1,0 +1,89 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+    <p>Lesson 14</p>
+    <script>
+        //Khai báo hàm ko có param
+        // function welcome(){
+        //     console.log('Welcome to Rikkei Academy')
+        // }
+        // //Khai báo hàm có một param
+        // function helloUser(userName){
+        //     console.log('Hello '+ userName)
+        // }
+        // //Khai báo hàm nhiều tham số
+        // function addNumber(number1, number2){
+        //     let sum = number1 + number2;
+        //     var array = [number1, number2];
+        //     return array;
+        // }
+        // //Gọi hàm
+        // // welcome();
+        // // helloUser('Nguyễn Văn A');
+        // let sumNumber = addNumber(3,5);
+        // // let testFunc = welcome();
+        // var sumNumber2 = addNumber(2,3);
+        // var arrCheck = addNumber(5,14);
+        // console.log(sumNumber)
+        // console.log(testFunc)
+        // console.log(sumNumber2)
+        // var a = 10;
+        // function addNumber2 (a,b){
+        //     a++;
+        //     return a
+        // }
+        // addNumber2(5,10)
+        // console.log('a =',a)
+    // (function (firstName, lastName){
+    //     var fullName = firstName + lastName;
+    //     return fullName;
+    //     console.log('Hello '+ fullName);
+    // }) ('Rikkei','Academy');
+    // var multiply = (number1, number2=5) => {
+    //     return number1 * number2;
+    // };
+    // var multiply2 = (number1, number2) => number1*number2;
+    // var result = multiply(5);
+    // var result2 = multiply2(3,9);
+    // console.log(result)
+    // console.log(result2)
+    // const sum = function(){
+    //     let result = 0;
+    //     console.log(arguments)
+    //     for (let i=0; i<arguments.length; i++){
+    //         result += arguments[i];
+    //     }
+    //     return result;
+    // };
+    // var result1 = sum(1);
+    // var result2 = sum(1,2);
+    // console.log(result1)
+    // console.log(result2)
+    // const sum1 = function(...restParams){
+    //     let result3 = 0;
+    //     for (let i=0; i<restParams.length; i++){
+    //         result3 += restParams[i];
+    //     }
+    //     return result3;
+    // };
+
+    function addNumber2 (){
+        let number = 0;
+        function checkNumber (){
+            console.log(number);
+            return number;
+        }
+            number++;
+            // a++;
+         return checkNumber()
+        }
+        var functionNumber = addNumber2()
+        console.log('a =',functionNumber)
+    </script>
+</body>    
+
+</html>

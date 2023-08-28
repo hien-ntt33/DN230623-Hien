@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 14 homework</p><br>
+    <hr>
+    <h2>Bài 3</h2>
+    <table>
+        <tr>
+            <td>Username</td>
+            <td><input id="name"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input id="password" input type="password" required></td>
+        </tr>
+    </table>
+    <button onClick='validateLogin()'>Login</button>
+    <br>
+    <hr>
+    <h2>Bài 4</h2>
+    <table>
+        <tr>
+            <td>Your weight (in kg)</td>
+            <td><input id="weight"></td>
+        </tr>
+        <tr>
+            <td>Your height (in meter)</td>
+            <td><input id="height"></td>
+        </tr>
+    </table>
+    <button onClick='calBMI()'>Your BMI</button>
+    <script>
+        //Bài 1
+        var browser = 'Chrome';
+        switch (browser) {
+            case 'Edge':
+                alert("You've got the Edge!");
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert('Okay we support these browsers too');
+            default:
+                alert('We hope that this page looks ok!');
+        }
+        //Bài 2
+        let a = prompt('a?', '');
+        switch (a) {
+            case 0:
+                alert(0);
+                break;
+            case 1:
+                alert(1);
+                break;
+            case 2:
+            case 3:
+                alert('2,3');
+        }
+        // Bài 3
+        function validateLogin() {
+            var username = document.getElementById("name").value;
+            var pwd = document.getElementById("password").value;
+            if (username == 'admin') {
+                switch (pwd) {
+                    case 'TheMaster':
+                        alert('Welcome');
+                        break;
+                    case '':
+                        alert('Canceled');
+                        break;
+                    default:
+                        alert('Wrong pasword');
+                        break;
+                }
+            }
+            else {
+                if (username == '') { alert('Canceled') }
+                else { alert('I dont know you') }
+            }
+        }
+        //Bài 4
+        function calBMI() {
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+            var BMI = (weight) / (height * height)
+            console.log('Ket qua BMI cua ban:', BMI)
+            if (BMI < 18.5) {
+                console.log('Phân loại:', 'cân nặng thấp(gầy)');
+            }
+            else if (BMI > 18.5 && BMI < 25) { console.log('Phân loại:', 'bình thường'); }
+            else if (BMI >= 25 && BMI < 30) { console.log('Phân loại:', 'tiền béo phì') }
+            else if (BMI > 30 && BMI < 35) { console.log('Phân loại:', 'béo phì độ I') }
+            else if (BMI > 35 && BMI < 40) { console.log('Phân loại:', 'béo phì độ II') }
+            else { console.log('Phân loại:', 'béo phì độ III') }
+        }
+    </script>
+</body>
+
+</html>

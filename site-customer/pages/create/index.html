@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Registaration Form</title>
+    <script src="../index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="../../styles/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="../dashboard/index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link" href="../create/index.html">
+                                <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>
+                                New request
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="../layout/layout-static.html">Static
+                                        Navigation</a>
+                                    <a class="nav-link" href="../layout/layout-sidenav-light.html">Light
+                                        Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                                data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                        data-bs-target="#pagesCollapseAuth" aria-expanded="false"
+                                        aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                                        data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="../login/login.html">Login</a>
+                                            <a class="nav-link" href="../register/register.html">Register</a>
+                                            <a class="nav-link" href="../login/password.html">Forgot
+                                                Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                        data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                        aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                        data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="#!">401 Page</a>
+                                            <a class="nav-link" href="#!">404 Page</a>
+                                            <a class="nav-link" href="#!">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="#!">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        <div id="loginName">HienNTT</div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <form class="mx-auto col-10 col-md-8 col-lg-6 needs-validation" novalidate>
+                    <div class="col-md-12">
+                        <label for="requestTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="requestTitle" required>
+                        <div class="invalid-feedback" id="title">
+                            Title cannot be empty!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4">
+                            <label for="requestStatus" class="form-label">Status</label>
+                            <select class="form-select" id="requestStatus">
+                                <option>New</option>
+                                <option>In progress</option>
+                                <option>Feedback</option>
+                                <option>Verify</option>
+                                <option>Cancelled</option>
+                                <option>Done</option>
+                            </select>
+                        </div>
+                        <div class=" col col-md-4">
+                            <label for="requestPriority" class="form-label">Priority</label>
+                            <select class="form-select input-group-append" id="requestPriority">
+                                <option>Normal</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                            <div class="valid-feedback">
+                                If you don't select priority, it will be seen as Normal
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="requestDate" class="form-label">Requested date</label>
+                        <div class="col-8">
+                            <div class="col input-group date" id="datepicker" data-date-format="mm-dd-yyyy">
+                                <input type="date" name="date" class="form-control" id="requestedDate" required>
+                            </div>
+                            <div class="invalid-feedback" id="check-requestDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col-md-6">
+                            <label for="requestDeadline" class="form-label">Desired deadline</label>
+                            <div class="col-8">
+                                <div class="col input-group date" id="datepicker" data-date-format="mm-dd-yyyy">
+                                    <input type="date" name="date" class="form-control" id="requestDeadline" required>
+                                </div>
+                                <div class="invalid-feedback" id="check-deadline">
+                                    Please choose your desired deadline
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="confidentialCheck">
+                                <label class="form-check-label" for="confidentialCheck">
+                                    Confidential
+                                </label>
+                                <div class="valid-feedback">
+                                    If checked, only admins will be able to see this request, they will then assign this
+                                    request to suitable assignee
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="requestNote" class="form-label">Special note</label>
+                        <input type="text" class="form-control" id="requestNote"
+                            placeholder="Thể ngắn/thể lịch sự, mục đích note hay reply tin nhắn KH v.v">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="requestContent" class="form-label">Content</label>
+                        <textarea class="form-control" id="requestContent" rows="12" required></textarea>
+                        <div class="invalid-feedback" id="check-content">
+                            Please enter your content!
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary m-2" type="submit" id="btn-create">Create</button>
+                    </div>
+                </form>
+            </main>
+            <div include-html="..\..\components\organisms\footer\d-footer.html"></div>
+        </div>
+    </div>
+    <script src="../../js/create/create.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script>
+        includeHTML();
+    </script>
+
+</html>

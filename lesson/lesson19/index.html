@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lesson 19</p>
+    <h2>Login Form</h2>
+
+    <div class="container">
+        <label for="mail"><b>Email</b></label>
+        <input id='email' type="text" placeholder="Enter email" name="mail" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id='pwd' type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" onclick="checkLogin()">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+    <script>
+        // //local storage
+        // const persons = [
+        //     {name:'Nguyen Van A',age:18},
+        //     {name:'Nguyen Van B',age:20},
+        //     {name:'Nguyen Van C',age:21}
+        // ]
+        // localStorage.setItem('user',JSON.stringify(persons))
+        // localStorage.setItem('userLogin',JSON.stringify({name:'Nguyen Van A',age:18}))
+        // console.log('user',localStorage.getItem('user'));
+        // console.log('users parse',JSON.parse(localStorage.getItem('user')));
+        // //session storage
+        // const person = [
+        //     {name:'Nguyen Van A',age:18},
+        //     {name:'Nguyen Van B',age:20},
+        //     {name:'Nguyen Van C',age:21}
+        // ]
+        // sessionStorage.setItem('users',JSON.stringify(person))
+        // sessionStorage.setItem('userLogin',JSON.stringify({name:'Nguyen Van A',age:18}))
+        // console.log('user',sessionStorage.getItem('users'));
+        // console.log('users parse',JSON.parse(sessionStorage.getItem('users')));
+        const user = [
+            { name: 'Nguyen Van A', email: 'anv@gmail.com', pwd: 'Abc123' },
+            { name: 'Nguyen Van B', email: 'bnv@gmail.com', pwd: 'Abc123' },
+            { name: 'Nguyen Van C', email: 'cnv@gmail.com', pwd: 'Abc123' }
+        ]
+        localStorage.setItem('users', JSON.stringify(user))
+        var userInfo = JSON.parse(localStorage.getItem('users'))
+        console.log(userInfo)
+        function checkLogin() {
+            var inputEmail = document.getElementById('email').value;
+            var inputPwd = document.getElementById('pwd').value;
+            let result = userInfo.filter(function (el) {
+                if (inputEmail == el.email && inputPwd == el.pwd) {
+                    return true;
+                }
+            }
+            )
+            console.log(result)
+            if (result.length > 0) {
+                alert('Login success')
+            }
+            else { alert('You have entered an invalid email or password') }
+        }
+    </script>
+</body>
+
+</html>

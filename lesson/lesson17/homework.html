@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lesson 17</p>
+    <script>
+        //bài 1
+        var person = new Object();
+        person.firstName = 'Nguyễn Văn';
+        person.lastName = 'Bình';
+        console.log(person)
+        person.lastName = 'Hoà';
+        console.log(person)
+        delete person.lastName
+        console.log(person)
+        //bài 2
+        var empty = new Object();
+        var Student = { studentId: 'SV001', studentName: 'Nguyễn Văn A' };
+        function checkEmpty(a) {
+            return Object.keys(a).length === 0
+        }
+        console.log(checkEmpty(empty))
+        console.log(checkEmpty(Student))
+        //bài 3
+        class Salary {
+            constructor(employeeId, salary) {
+                this.employeeId = employeeId;
+                this.salary = salary;
+            }
+        }
+        var list = [];
+        for (i = 1; i < 5; i++) {
+            var employee = new Salary('RK00' + i, 5000);
+            list.push(employee)
+        }
+        console.log(list)
+        var sum = 0;
+        list.forEach(element => {
+            sum += element.salary;
+        }
+        );
+        console.log('total salary is ' + sum)
+        //bài 4
+        class Menu {
+            constructor(width, height, title) {
+                this.width = width;
+                this.height = height;
+                this.title = title;
+            }
+        }
+        var listMenu = [];
+        for (i = 1; i < 5; i++) {
+            var child = new Menu(100 + i, 150 + i, 'Document');
+            listMenu.push(child)
+        }
+        console.log(listMenu)
+        let result = listMenu.filter(function (el) {
+            for (const tmpKey in el) {
+                if (typeof el[tmpKey] === "number") {
+                    el[tmpKey] = el[tmpKey] * 2;
+                }
+            }
+            return el
+        }
+        )
+        console.log(result)
+        //bài 5
+        class Computer {
+            read(count, price) {
+                this.count = count;
+                this.price = price;
+            }
+            sum() {
+                var sumCom = this.count + this.price
+                return sumCom;
+            }
+            mul() {
+                var mulCom = this.count * this.price
+                return mulCom;
+            }
+        }
+        var computer = new Computer();
+        computer.read(5, 5000);
+        console.log(computer)
+        console.log('sum', computer.sum())
+        console.log('mul', computer.mul())
+        //bài 6+7
+        class Book {
+            constructor(bookId, bookName, price, author, bookStatus) {
+                this.bookId = bookId;
+                this.bookName = bookName;
+                this.price = price;
+                this.author = author;
+                this.bookStatus = bookStatus;
+            }
+            inputData(arr) {
+                var newBook = new Book('00' + (arr.length + 1), 'Novel' + (arr.length + 1), Math.floor(Math.random() * (200 - 50)) + 50 + 'k', 'Higashino Keigo', 'New')
+                arr.push(newBook)
+                return arr
+            }
+            displayData(arr) {
+                console.log(arr)
+            }
+            deleteData(arr, i) {
+                arr.splice(i, 1)
+                return arr
+            }
+            sortData(arr) {
+                var sortedArr = arr.sort((a, b) => a.price - b.price);
+                console.log(sortedArr)
+            }
+            searchData(arr, name) {
+                let searchResult = arr.filter(function (el) {
+                    for (const keys in el) {
+                        if (el[keys] === name) {
+                            return true
+                        }
+                    }
+                }
+                )
+                if (searchResult.length > 0) {
+                    console.log(searchResult)
+                }
+            }
+        }
+        var listBook = [];
+        for (i = 1; i < 5; i++) {
+            var book = new Book('00' + i, 'Novel ' + i, Math.floor(Math.random() * (200 - 50)) + 50, 'Higashino Keigo', 'New')
+            listBook.push(book)
+        }
+        //display lisBook
+        book.displayData(listBook);
+        //input new data
+        // console.log(book.inputData(listBook))
+        //delete data
+        // console.log(book.deleteData(listBook,3))
+        //sort by price asc
+        // book.sortData(listBook)
+        //search by bookName
+        // book.searchData(listBook, 'Novel 3')
+    </script>
+</body>
+
+</html>

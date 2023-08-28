@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name">
+    <button onclick="myFunction()">Click me</button>
+</body>
+<script>
+    function myFunction(){
+        var fullName= document.getElementById("name").value;
+        console.log('fullName :'+ fullName)
+    }
+console.log("Nguyen Van A")
+var name ="Nguyen Van B";
+console.log(name)
+
+var A=60;
+var B=50;
+var C=A+B;
+var D=5;
+var F=D;
+var E=5;
+ E+=C;
+console.log('Ket qua : '+C);
+console.log(Number(D)+C);
+//alert("Warning");
+console.log(E)
+console.log(E==D)
+console.log(A!=C)
+if(A > B){
+    console.log('A > B')
+}
+else {if(A>10){
+    console.log('A>10')
+}
+else{
+    console.log('A < B')
+}}
+
+if(A>B && A<100 || A>150){
+    console.log('A is good')
+}
+else {
+    console.log('B is good')
+}
+
+if (A>B && (A>100 || A<50)){
+    console.log('A is good')
+}
+else {
+    console.log('B is good')
+}
+
+if(A>B && A>C || A>D && A>F)
+{
+    console.log('Right')
+}
+else {console.log('Wrong')}
+
+var result= A>B && (A>C || A<D) && A>F ? 'Right' : 'Wrong';
+console.log('Ket qua : ',result)
+
+</script>
+</html>
